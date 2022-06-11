@@ -1,6 +1,8 @@
-# Creditos Panda
+# Prueba zerviz
 
 ## Instalacion
+Version de angular 8
+Recomendable usar node 12.22.1
 
 Ejecutar en una consola `npm install`
 
@@ -11,11 +13,11 @@ Ejecutar `ng serve` para un servidor de desarrollo. Navegar hacia `http://localh
 ## Copilacion para produccion
 
 Antes de ejecutar este comando se tiene que revisar y ajustar las rutas bases del environment.prod
-Ejecutar `ng build --prod --build-optimizer=false`. 
-Se creara la carpeta `dist/`. y su contenido se subira al servidor en la carpeta `public_html/`
+Ejecutar `ng build --prod`. 
+Se creara la carpeta `dist/`.
 
 ## Copilacion para test
 
 Antes de ejecutar este comando se tiene que revisar y ajustar las rutas bases del environment.prod
-Ejecutar `ng build --prod --build-optimizer=false --base-href=/test/`. 
-Se creara la carpeta `dist/`. y su contenido se subira al servidor en la carpeta `public_html/test`
+Ejecutar `ng build --prod --base-href=/test/`. 
+Se creara la carpeta `dist/`.
