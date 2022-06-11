@@ -1,0 +1,86 @@
+
+<div class="home">
+
+    <div class="container-fluid">
+
+        <header>
+
+            <div class="wrap">
+
+                <div class="title-area">
+                    <img src="/assets/img/logo.gif" width="300" alt="Zerviz"/>
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="container-fluid container-fluid-padding">
+
+            <div class="row">
+
+                <main class="container-fluid container-fluid-padding" id="genesis-content">
+
+                    <section>
+                        <div class="row">
+                            <h2>Prueba Técnica Zerviz</h2>
+                            <form [formGroup]="homeForm">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Pais</label>
+                                            <select class="form-control" formControlName="country">
+                                                <option value=""></option>
+                                                <option *ngFor="let c of countries" [value]="c.country_code">
+                                                    {{c.name}}
+                                                </option>
+                                            
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Deporte</label>
+                                            <select class="form-control" formControlName="sport" (change)="searchPlayers()">
+                                                <option value=""></option>
+                                                <option *ngFor="let s of allSports" [value]="s.sport_code">
+                                                    {{s.name}}
+                                                </option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Jugador</label>
+                                            <select class="form-control" formControlName="player" (change)="selectPlayer()">
+                                                <option value=""></option>
+                                                <option *ngFor="let p of players" [value]="p.player_code">
+                                                    {{p.name}}
+                                                </option>
+                                              
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img (click)="downloadImage()" *ngIf="imagePlayer != ''" class="image-player" [src]="imagePlayer">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button type="button" (click)="downloadImage()" [disabled]="imagePlayer == ''" class="btn btn-danger btn-lg">Descargar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+  <app-footer></app-footer>
+
+</div>
+
